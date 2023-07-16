@@ -12,9 +12,9 @@ export async function createUser(req, res) {
     // }
     // const newUser = new UserModel( body )
     // await newUser.save()
-    const [userCreated, error] = await awaitCatcher(UserModel.create(body))
+    const [userCreated, error] = await awaitCatcher(UserModel.create(body)) //aquí usa la librería await catcher
     if (error) {
-        return res.status(400).json({ status: "error", msg: error.message })
+        return res.status(400).json({ status: "error", msg: error.message }) 
     }
     return res.status(201).json(userCreated)
 

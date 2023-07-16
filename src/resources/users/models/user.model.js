@@ -57,4 +57,4 @@ userSchema.virtual('fullName').get(function () {
     return `${this.name} ${this.surname}`
 })
 
-export const UserModel = new mongoose.model('User', userSchema)
+export const UserModel = new mongoose.model('User', userSchema) //permite interactuar directamente con la base

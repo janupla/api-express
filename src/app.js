@@ -11,7 +11,7 @@ const app = express()
 startConnection()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors()) //permite acceso de toda solicitud, evita el error cors 
 
 app.get('/', function (req, res) {
     return res.status(200).json({ msg: "Bienvenido" })
