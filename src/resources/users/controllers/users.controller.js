@@ -51,7 +51,7 @@ export async function getUserById(req, res) {
 export async function updateUserById(req, res) {
     const id = req.params.id
     const body = req.body
-    const [userUpdated, error] = await awaitCatcher(UserModel.findByIdAndUpdate(id, body, { new: true }))
+    const [userUpdated, error] = await awaitCatcher(UserModel.findByIdAndUpdate(id, body, { new: true })) //actualiza sin modificar ID
     if (error) {
         return res.status(404).json({ status: "error", msg: "usuario no encontrado" })
     }
